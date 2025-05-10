@@ -1,0 +1,52 @@
+<div class="calendar-layout">
+    <section class="left-app"> <!-- Change Name | Also update name in styles.css-->
+        <div>
+            <div class="top-bar">
+                <div class="view-and-filter">
+                    <div class="dropdown">
+                        <button class="filter-button" (click)="dropdownOpen = !dropdownOpen">
+                          <div>Filter</div> 
+                          <div *ngIf="dropdownOpen">▴</div>
+                          <div *ngIf="!dropdownOpen">▾</div>
+                        </button>
+                        <div *ngIf="dropdownOpen" class="floating-menu">
+                            <label *ngFor="let item of calendarService.filterItem; let i = index" class="checkbox">
+                                {{ item }}
+                                <input type="checkbox" [checked]="calendarService.selectedFilter()[i]"
+                                    (change)="calendarService.toggleSelectedFilter(i)" />
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="view-switch">
+                    <button [class.active]="calendarService.selectedView() === 'day'" (click)="calendarService.selectedView.set('day')">Day</button>
+                    <button [class.active]="calendarService.selectedView() === 'week'" (click)="calendarService.selectedView.set('week')">Week</button>
+                    <button [class.active]="calendarService.selectedView() === 'month'" (click)="calendarService.selectedView.set('month')">Month</button>
+                </div>
+            </div>
+
+            <!-- View loader -->
+            <div *ngIf="calendarService.selectedView() === 'day'"><app-day></app-day></div>
+            <div *ngIf="calendarService.selectedView() === 'week'"><app-week></app-week></div>
+            <div *ngIf="calendarService.selectedView() === 'month'">
+                <calendar></calendar>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="right-app"> <!-- Change Name | Also update name in styles.css -->
+        <div *ngIf="eventService1.sidebar()=='create'">
+            <eventCreation></eventCreation>
+        </div>
+        <div *ngIf="eventService1.sidebar()== 'edit'">
+            <eventEdit></eventEdit>
+        </div>
+        <div *ngIf="eventService1.sidebar()== 'view'">
+            <eventView></eventView>
+        </div>
+    </section>
+</div>
+
+

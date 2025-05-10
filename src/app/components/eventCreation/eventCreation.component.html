@@ -1,0 +1,84 @@
+<div>
+  <form>
+    <h1>Add Event</h1>
+
+    <div>Name: <input type="text" #eName required/></div>
+
+    <div>Category:
+      <select #categories>
+        <option value="noCategory">----</option>
+        <option value="work">Work</option>
+        <option value="class">Class</option>
+        <option value="homework">Homework</option>
+        <option value="test">Test</option>
+        <option value="exam">Exam</option>
+        <option value="meeting">Meeting</option>
+        <option value="clubs">Clubs</option>
+        <option value="study">Study</option>
+        <option value="break">Break</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div>Color:
+      <select #colors>
+        <option value="noColor">----</option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="orange">Orange</option>
+        <option value="yellow">Yellow</option>
+        <option value="green">Green</option>
+        <option value="purple">Purple</option>
+        <option value="cyan">Cyan</option>
+        <option value="grey">Grey</option>
+        <option value="brown">Brown</option>
+      </select>
+    </div>
+
+    <div>Date: <input type="date" #eventdate required /></div>
+    <div>Start time: <input type="time" #startTime required /></div>
+    <div>End time: <input type="time" #endTime required /></div>
+
+    <div>Recurring:
+      <select #recuring>
+        <option value="recuringPeriod">----</option>
+        <option value="none">None</option>
+        <option value="daily">Daily</option>
+        <option value="weekly">Every Week</option>
+        <option value="biweekly">Every other week</option>
+        <option value="monthly">Every Month</option>
+      </select>
+    </div>
+
+    <div>End Date: <input type="date" #endDate /></div>
+
+    <div>Description:</div>
+    <div>
+      <textarea #eventDescription placeholder="(optional)"></textarea>
+    </div>
+
+    <div  class="button-row">
+      <button
+        type="reset"
+        (click)="
+          saveEvent(
+            eName.value,
+            eventdate.value,
+            startTime.value,
+            endTime.value,
+            recuring.value,
+            endDate.value,
+            eventDescription.value,
+            categories.value,
+            colors.value
+          )"
+      >
+        Add Event
+      </button> <!-- Done think we need to add a button to view the event details 
+      <button type="button" (click)="eventService.viewEvent(eventService.tempEvent)">
+        Event Details
+      </button> -->
+    </div> <!-- for testing if the events are saving propperly  
+    <pre>{{ this.eventsAsString }}</pre> -->
+  </form>
+</div>

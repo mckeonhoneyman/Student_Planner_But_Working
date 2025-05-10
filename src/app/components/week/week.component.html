@@ -1,0 +1,42 @@
+<div class="week-header">
+  <button (click)="goToPreviousWeek()">«</button>
+  <h2>Week of: {{ weekRange() }}</h2>
+  <button (click)="goToNextWeek()">»</button>
+</div>
+
+<div class="week-view-container">
+  <div class="week-view-header">
+    <div class="time-column-header"></div>
+    <div
+      class="day-header"
+      *ngFor="let date of weekDates()"
+      (click)="goToDayView(date)"
+    >
+      {{ date.toFormat('ccc L/dd') }}
+    </div>
+  </div>
+
+  <div class="week-view-body">
+    <div class="time-column">
+      <div class="time-slot" *ngFor="let hour of hours">{{ hour }}</div>
+    </div>
+
+    <div class="day-column" *ngFor="let date of weekDates()">
+      <div class="time-slot" *ngFor="let hour of hours"></div>
+      <div *ngFor="let event of eventsByDay(date)">
+        <div
+          class="event"
+          *ngIf="calendarService.eventVisible(event)"
+          [ngStyle]="getWeekEventStyle(event)"
+          (click)="onEventClick(event)"
+        >
+          <div class="event-content">
+            <strong>{{ event.eventName }}</strong>
+            <div>{{ event.sTime }} - {{ event.eTime }}</div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>

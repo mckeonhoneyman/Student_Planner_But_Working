@@ -1,0 +1,4 @@
+Below is information regaurd the web application that may be useful while working
+
+// Link for NDSU Logos https://www.ndsu.edu/vpur/resources/logos/
+// Color codes NDSU green #005643, NDSU yellow #FFC82E

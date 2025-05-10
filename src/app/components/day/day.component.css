@@ -1,0 +1,102 @@
+.day-view {
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+  padding: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.day-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  margin-bottom: 16px;
+}
+
+.day-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #003c2e;
+}
+
+.day-header button {
+  padding: 6px 12px;
+  font-size: 14px;
+  background-color: #005643;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.day-header button:hover {
+  background-color: #00725a;
+}
+
+.hour-grid {
+  position: relative;
+  border: 1px solid #005643;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.hour-block {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  font-size: 13px;
+  background-color: #f9f9f9;
+}
+
+.hour-label {
+  width: 70px;
+  font-weight: 600;
+  text-align: center;
+  color: #555;
+}
+
+.events-container {
+  position: absolute;
+  top: 0;
+  left: 70px;
+  right: 10px;
+}
+
+.event {
+  position: absolute;
+  border-left: 4px solid black;
+  border-radius: 6px;
+  padding: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background-color: #90caf9;
+  color: #003366;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.event:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  z-index: 5;
+}
+
+.event-content strong {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}

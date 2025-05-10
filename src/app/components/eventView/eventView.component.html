@@ -1,0 +1,66 @@
+<div>
+  <form>
+    <h1>View Event</h1>
+
+    <div>Name: <input type="text" #eName value="{{eventService.tempEvent.eventName}}" disabled /></div>
+
+    <div>Category:
+      <select #categories disabled>
+        <option value="noCategory" *ngIf="eventService.tempEvent.category=='noCategory'||null">----</option>
+        <option value="work" *ngIf="eventService.tempEvent.category=='work'">Work</option>
+        <option value="class" *ngIf="eventService.tempEvent.category=='class'">Class</option>
+        <option value="homework" *ngIf="eventService.tempEvent.category=='homework'">Homework</option>
+        <option value="test" *ngIf="eventService.tempEvent.category=='test'">Test</option>
+        <option value="exam" *ngIf="eventService.tempEvent.category=='exam'">Exam</option>
+        <option value="meeting" *ngIf="eventService.tempEvent.category=='meeting'">Meeting</option>
+        <option value="clubs" *ngIf="eventService.tempEvent.category=='clubs'">Clubs</option>
+        <option value="study" *ngIf="eventService.tempEvent.category=='study'">Study</option>
+        <option value="break" *ngIf="eventService.tempEvent.category=='break'">Break</option>
+        <option value="other" *ngIf="eventService.tempEvent.category=='other'">Other</option>
+      </select>
+    </div>
+
+    <div>Color:
+      <select #colors disabled>
+        <option value="noColor" *ngIf="eventService.tempEvent.color=='noColor'||null">----</option>
+        <option value="red" *ngIf="eventService.tempEvent.color=='red'">Red</option>
+        <option value="blue" *ngIf="eventService.tempEvent.color=='blue'">Blue</option>
+        <option value="orange" *ngIf="eventService.tempEvent.color=='orange'">Orange</option>
+        <option value="yellow" *ngIf="eventService.tempEvent.color=='yellow'">Yellow</option>
+        <option value="green" *ngIf="eventService.tempEvent.color=='green'">Green</option>
+        <option value="purple" *ngIf="eventService.tempEvent.color=='purple'">Purple</option>
+        <option value="cyan" *ngIf="eventService.tempEvent.color=='cyan'">Cyan</option>
+        <option value="grey" *ngIf="eventService.tempEvent.color=='grey'">Grey</option>
+        <option value="brown" *ngIf="eventService.tempEvent.color=='brown'">Brown</option>
+      </select>
+    </div>
+
+    <div>Date: <input type="date" #eventdate value="{{eventService.tempEvent.date}}" disabled /></div>
+    <div>Start time: <input type="time" #startTime value="{{eventService.tempEvent.sTime}}" disabled /></div>
+    <div>End time: <input type="time" #endTime value="{{eventService.tempEvent.eTime}}" disabled /></div>
+
+    <div>Recurring:
+      <select #recuring disabled>
+        <option value="recuringPeriod" *ngIf="eventService.tempEvent.recurring=='recuringPeriod'||null">----</option>
+        <option value="none" *ngIf="eventService.tempEvent.recurring=='none'">None</option>
+        <option value="daily" *ngIf="eventService.tempEvent.recurring=='daily'">Daily</option>
+        <option value="weekly" *ngIf="eventService.tempEvent.recurring=='weekly'">Every Week</option>
+        <option value="biweekly" *ngIf="eventService.tempEvent.recurring=='biweekly'">Every other week</option>
+        <option value="monthly" *ngIf="eventService.tempEvent.recurring=='monthly'">Every Month</option>
+      </select>
+    </div>
+
+    <div>End Date: <input type="date" #endDate value="{{eventService.tempEvent.eDate}}" disabled /></div>
+
+    <div>Description:</div>
+    <div>
+      <textarea #eventDescription disabled>{{eventService.tempEvent.description}}</textarea>
+    </div>
+
+    <div class="button-row">
+      <button type="button" (click)="eventService.editEvent()">Edit</button>
+      <button type="button" class="secondary" (click)="eventService.backtoCreateEvent()">Back</button>
+    </div>
+ 
+  </form>
+</div>

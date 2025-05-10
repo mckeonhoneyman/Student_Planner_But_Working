@@ -1,0 +1,85 @@
+form {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 1.25rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    max-width: 100%;
+  }
+  
+  form h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #003c2e;
+    text-align: center;
+  }
+  
+  form div {
+    margin-bottom: 1rem;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  input[type="text"], 
+  input[type="date"],
+  input[type="time"],
+  select,
+  textarea {
+    margin-left: 10px;
+    padding: 8px;
+    font-size: 14px;
+    width: calc(100% - 12px);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    display: inline-block;
+  }
+  
+  textarea {
+    width: 100%;
+    min-height: 80px;
+    resize: vertical;
+  }
+  
+  .button-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .button-row button {
+    width: 48%;
+    padding: 8px 14px;
+    background-color: #005643;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .button-row button:hover {
+    background-color: #00725a;
+  }
+  
+  .button-row button.danger {
+    background-color: #c0392b;
+  }
+  
+  .button-row button.danger:hover {
+    background-color: #e74c3c;
+  }
+  
+  pre {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 6px;
+    font-size: 13px;
+    overflow-x: auto;
+    color: #222;
+  }
+  

@@ -1,0 +1,128 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .calendar-layout {
+    display: flex;
+    flex-grow: 1;
+    height: 100%;
+    width: 100vw;
+    box-sizing: border-box;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .left-app {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 2.5rem;
+    padding-right: 2.5rem;
+    box-sizing: border-box;
+    flex: 0 0 70%;
+    max-width: 70%;
+    min-width: 70%;
+    height: 100%;
+  }
+  
+  .right-app {
+    border-radius: 20px;
+    box-sizing: border-box;
+    flex: 0 0 30%;
+    max-width: 30%;
+    min-width: 30%;
+    height: 100%;
+    padding-right: 2rem;
+  }
+  
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+  }
+  
+  .view-and-filter {
+    display: flex;
+    align-items: center;
+  }
+  
+  .dropdown {
+    position: relative;
+  }
+  
+  .filter-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 140px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  
+  .filter-button:hover {
+    background-color: #e2e6f0;
+  }
+  
+  .floating-menu {
+    position: absolute;
+    top: 100%;
+    margin-top: 0px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-width: 140px;
+    z-index: 10;
+    padding: 6px 0;
+  }
+  
+  .checkbox {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 12px;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  
+  .checkbox:hover {
+    background-color: #f0f2ff;
+  }
+  
+  .view-switch {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .view-switch button {
+    padding: 6px 12px;
+    font-size: 13px;
+    border: none;
+    border-radius: 4px;
+    background-color: #e0e0e0;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .view-switch button:hover {
+    background-color: #d2d2d2;
+  }
+  
+  .view-switch button.active {
+    background-color: #005643;
+    color: #fff;
+    font-weight: 600;
+  }

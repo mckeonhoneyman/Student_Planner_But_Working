@@ -1,0 +1,134 @@
+.week-view-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #005643;
+  border-radius: 8px;
+  background-color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+
+.week-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+}
+
+.week-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #003c2e;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.week-header button {
+  padding: 6px 12px;
+  font-size: 14px;
+  background-color: #005643;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.week-header button:hover {
+  background-color: #00725a;
+}
+
+.week-view-header {
+  display: grid;
+  grid-template-columns: 80px repeat(7, 1fr);
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #005643;
+  font-weight: 600;
+  text-align: center;
+  font-size: 14px;
+}
+
+.time-column-header {
+  background-color: #d9d9d9;
+  font-size: 13px;
+  padding: 8px 0;
+  border-right: 1px solid #ccc;
+}
+
+.day-header {
+  padding: 8px 0;
+  border-left: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.day-header:hover,
+.time-slot:hover {
+  background-color: #e6f2f0;
+  transition: background-color 0.2s ease;
+}
+
+.week-view-body {
+  display: grid;
+  grid-template-columns: 80px repeat(7, 1fr);
+  height: auto;
+  overflow-y: auto;
+}
+
+.time-column {
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+}
+
+.time-slot {
+  height: 35px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  font-size: 12px;
+  line-height: 35px;
+}
+
+.day-column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #ccc;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.event {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  border-left: 4px solid black;
+  border-radius: 6px;
+  padding: 6px;
+  background-color: #90caf9;
+  color: #003366;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.event:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  z-index: 5;
+}
+
+.event-content strong {
+  font-weight: 600;
+  margin-bottom: 2px;
+  font-size: 13px;
+}
